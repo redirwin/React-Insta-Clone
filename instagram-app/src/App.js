@@ -3,6 +3,7 @@ import "./App.css";
 import dummyData from "./dummy-data";
 import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
+// import { Button } from "reactstrap";
 
 class App extends Component {
   constructor() {
@@ -17,7 +18,7 @@ class App extends Component {
 
     return (
       <div className="app-container">
-        <SearchBar />
+        <Button color="danger">Test!</Button>
         <div className="App">
           <PostContainer posts={this.state.posts} />
         </div>
