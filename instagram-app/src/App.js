@@ -3,7 +3,6 @@ import "./App.css";
 import dummyData from "./dummy-data";
 import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
-// import { Button } from "reactstrap";
 
 class App extends Component {
   constructor() {
