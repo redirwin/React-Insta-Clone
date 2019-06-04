@@ -5,6 +5,14 @@ const CommentSection = props => {
   //   console.log(props);
   return (
     <div>
+      <div className="reader-interaction">
+        <div className="reader-icons">
+          <div>Icon 1</div>
+          <div>Icon 2</div>
+          <div>Icon 3</div>
+        </div>
+        <div>{props.likes} likes</div>
+      </div>
       {props.comments.map(post => {
         return (
           <div key={post.id} className="comment-container">

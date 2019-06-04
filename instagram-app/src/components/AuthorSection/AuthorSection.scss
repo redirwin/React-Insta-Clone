@@ -1,0 +1,23 @@
+.author-section {
+  .about-author {
+    // display: flex;
+    background-color: #ffffff;
+    border-top: 1px solid grey;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    padding: 2%;
+    img {
+      width: 50px;
+      border-radius: 50%;
+      padding: 3px;
+    }
+  }
+
+  .post-image {
+    img {
+      width: 100%;
+      border-left: 1px solid grey;
+      border-right: 1px solid grey;
+    }
+  }
+}
