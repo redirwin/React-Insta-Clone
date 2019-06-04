@@ -1,0 +1,33 @@
+.comment-section {
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+
+  .reader-interaction {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+
+    .reader-icons {
+      display: flex;
+      flex-direction: row;
+      width: 30%;
+      justify-content: space-between;
+    }
+
+    .likes {
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+  .comment-container {
+    display: flex;
+    padding-left: 2%;
+
+    .username {
+      font-weight: bold;
+      margin-right: 1%;
+    }
+  }
+}
