@@ -22,6 +22,7 @@ const CommentSection = props => {
           </div>
         );
       })}
+      <div className="time-stamp">{props.time}</div>
     </div>
   );
 };
@@ -31,7 +32,8 @@ CommentSection.propTypes = {
     PropTypes.shape({
       id: PropTypes.number,
       username: PropTypes.string,
-      text: PropTypes.string
+      text: PropTypes.string,
+      time: PropTypes.string
     })
   )
 };
