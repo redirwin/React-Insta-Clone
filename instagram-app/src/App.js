@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 
-class App extends React.Component{
+class App extends Component{
   constructor() {
   super();
   this.state = {
@@ -12,13 +12,13 @@ class App extends React.Component{
 }
   
  render() {
-  console.log(this.state.posts);
+  // console.log(this.state.posts);
 
    return (    
      <div className="App">
 
      <p>This is the App.</p>
-     <PostContainer posts={this.state.posts}/>
+     <PostContainer id={this.state.id} posts={this.state.posts}/>
 
      </div>
    )

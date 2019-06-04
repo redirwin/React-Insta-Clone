@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentSection from '../CommentSection/CommentSection';
 
 const PostContainer = props => {
 	console.log(props.posts);
@@ -6,7 +7,10 @@ const PostContainer = props => {
 		<div>
 		 {props.posts.map(post => {
 			 return (
-				<p>New Post</p>
+				 <div>
+					<p>From PostContainer</p>
+					<CommentSection comments={post.comments} id={post.id} />
+				</div>
 			 );
 			})}
 		</div>
