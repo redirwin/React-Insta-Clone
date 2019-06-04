@@ -1,10 +1,22 @@
 .body-container {
   background-color: #fafafa;
+  border-top: 1px solid grey;
 
   .post-container {
-    // border: 1px solid grey;
-    width: 60%;
-    max-width: 800px;
-    margin: 10% auto;
+    width: 50%;
+    max-width: 600px;
+    margin: 5% auto;
+
+    form {
+      width: 100%;
+
+      input {
+        padding: 2%;
+      }
+
+      .comment-input {
+        width: 90%;
+      }
+    }
   }
 }

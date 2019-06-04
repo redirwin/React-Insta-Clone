@@ -2,7 +2,6 @@ import React from "react";
 import "../AuthorSection/AuthorSection.scss";
 
 const AuthorSection = props => {
-  console.log(props);
   return (
     <div className="author-section">
       <div className="about-author">

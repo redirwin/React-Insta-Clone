@@ -33,12 +33,12 @@ const SearchBar = () => {
         <FontAwesomeIcon
           icon={faComment}
           size="lg"
-          className="heart-icon header-icons"
+          className="comment-icon header-icons"
         />
         <FontAwesomeIcon
           icon={faHeart}
           size="lg"
-          className="user-icon header-icons"
+          className="heart-icon header-icons"
         />
       </div>
     </div>

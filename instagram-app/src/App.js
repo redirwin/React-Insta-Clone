@@ -13,8 +13,6 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.posts);
-
     return (
       <div className="app-container">
         <SearchBar />

@@ -1,16 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../CommentSection/CommentSection.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
 const CommentSection = props => {
-  //   console.log(props);
   return (
     <div className="comment-section">
       <div className="reader-interaction">
-        <div className="reader-icons">
-          <div>Icon 1</div>
-          <div>Icon 2</div>
-          <div>Icon 3</div>
+        <div className="reader-icons-container">
+          <FontAwesomeIcon
+            icon={faHeart}
+            size="lg"
+            className="reader-icon-heart"
+          />
+          <FontAwesomeIcon
+            icon={faComment}
+            size="lg"
+            className="reader-icon-comment"
+          />
         </div>
         <div className="likes">{props.likes} likes</div>
       </div>

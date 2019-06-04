@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import "../PostContainer/PostContainer.scss";
 
 const PostContainer = props => {
-  // console.log(props.posts);
   return (
     <div className="body-container">
       {props.posts.map(post => {
@@ -16,8 +15,6 @@ const PostContainer = props => {
                 author={post.username}
                 thumbnail={post.thumbnailUrl}
                 postContent={post.imageUrl}
-                // likes={post.likes}
-                // time={post.timestamp}
               />
             </div>
             <CommentSection
@@ -27,10 +24,12 @@ const PostContainer = props => {
             />
             <form className="add-comment-container">
               <input
+                className="comment-input"
                 type="text"
                 name="comment-input"
                 placeholder="Add a comment..."
               />
+              <input className="submit-button" type="submit" value="Post" />
             </form>
           </div>
         );
