@@ -18,7 +18,7 @@ class App extends Component {
 
     return (
       <div className="app-container">
-        <Button color="danger">Test!</Button>
+        <SearchBar />
         <div className="App">
           <PostContainer posts={this.state.posts} />
         </div>
