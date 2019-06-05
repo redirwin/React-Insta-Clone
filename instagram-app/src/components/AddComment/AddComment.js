@@ -3,17 +3,20 @@ import React from "react";
 import "../CommentSection/CommentSection.scss";
 
 const AddComment = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       {/* Form for adding new comment to comment stream. */}
-      <form className="add-comment-container">
+      <form
+        className="add-comment-container"
+        onSubmit={event => props.addNewComment(event)}
+      >
         <input
           type="text"
           className="comment-input"
           name="comment-input"
           placeholder="Add a comment..."
-          onChange={event => props.formInputChange(event)}
+          onChange={event => props.commentFormChange(event, props.postIndex)}
         />
         <input className="submit-button" type="submit" value="Post" />
       </form>

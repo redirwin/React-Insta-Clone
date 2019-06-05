@@ -20,19 +20,23 @@ class CommentSection extends Component {
     };
   }
 
-  formInputChange = event => {
+  // Manage the form input.
+  commentFormChange = event => {
     event.preventDefault();
+    // console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
-  addNewComment = (event, index) => {
+  addComment = event => {
     event.preventDefault();
+    console.log(event.target.value);
+    // console.log(index);
   };
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div>
         <div className="comment-section">
@@ -68,7 +72,11 @@ class CommentSection extends Component {
           <div className="time-stamp">{this.props.time}</div>
         </div>
 
-        <AddComment formInputChange={this.formInputChange} />
+        <AddComment
+          commentFormChange={this.commentFormChange}
+          addNewComment={this.addComment}
+          postIndex={this.props.postIndex}
+        />
       </div>
     );
   }
