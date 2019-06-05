@@ -27,8 +27,16 @@
 
   .comment-container {
     display: flex;
-    padding-left: 2%;
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    padding: 0 2%;
     text-align: left;
+    width: 100%;
 
     .username {
       font-weight: bold;
