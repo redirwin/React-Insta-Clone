@@ -21,16 +21,8 @@ const PostContainer = props => {
               likes={post.likes}
               comments={post.comments}
               time={post.timestamp}
+              postIndex={post.id}
             />
-            <form className="add-comment-container">
-              <input
-                className="comment-input"
-                type="text"
-                name="comment-input"
-                placeholder="Add a comment..."
-              />
-              <input className="submit-button" type="submit" value="Post" />
-            </form>
           </div>
         );
       })}

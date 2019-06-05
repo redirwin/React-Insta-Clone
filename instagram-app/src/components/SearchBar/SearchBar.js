@@ -12,14 +12,16 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 const SearchBar = () => {
   return (
     <div className="header-container">
-      <FontAwesomeIcon
-        icon={faInstagram}
-        size="lg"
-        className="insta-icon header-icons"
-      />
+      <div className="header-left-container">
+        <FontAwesomeIcon
+          icon={faInstagram}
+          size="lg"
+          className="insta-icon header-icons"
+        />
+        <div className="bar"> </div>
+        <div className="app-name">Instaclone</div>
+      </div>
 
-      <div>Instaclone</div>
-      <div className="bar" />
       <form className="search-form-container">
         <input type="text" name="search-input" placeholder="&#9906; Search" />
       </form>

@@ -6,27 +6,5 @@
     width: 50%;
     max-width: 600px;
     margin: 5% auto;
-
-    form {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      input {
-        padding: 2%;
-      }
-      border-left: 1px solid grey;
-      border-right: 1px solid grey;
-      border-bottom: 1px solid grey;
-
-      .comment-input {
-        width: 90%;
-        border: none;
-      }
-      .submit-button {
-        // width: 10%;
-        background: rgba(255, 255, 255, 1);
-        border: none;
-      }
-    }
   }
 }
