@@ -20,6 +20,13 @@ class CommentSection extends Component {
     };
   }
 
+  formInputChange = event => {
+    event.preventDefault();
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+
   addNewComment = (event, index) => {
     event.preventDefault();
   };
@@ -61,7 +68,7 @@ class CommentSection extends Component {
           <div className="time-stamp">{this.props.time}</div>
         </div>
 
-        <AddComment />
+        <AddComment formInputChange={this.formInputChange} />
       </div>
     );
   }
