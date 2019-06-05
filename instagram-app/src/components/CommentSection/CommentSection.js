@@ -20,7 +20,9 @@ const CommentSection = props => {
             className="reader-icon-comment"
           />
         </div>
-        <div className="likes">{props.likes} likes</div>
+        <div className="likes">
+          {parseInt(props.likes).toLocaleString()} likes
+        </div>
       </div>
       {props.comments.map(post => {
         return (
