@@ -21,7 +21,7 @@ class SearchBar extends React.Component {
   };
 
   render() {
-    console.log(this.state.searchInput);
+    // console.log(this.state.searchInput);
     return (
       <div className="header-container">
         <div className="header-left-container">
@@ -36,7 +36,7 @@ class SearchBar extends React.Component {
 
         <form
           className="search-form-container"
-          onSubmit={e => this.props.filterPosts(e)}
+          onSubmit={e => this.props.filterPosts(e, this.state.searchInput)}
         >
           <input
             type="text"

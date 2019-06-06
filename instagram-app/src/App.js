@@ -6,18 +6,24 @@ import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
   state = {
-    posts: [],
-    searchInput: ""
+    posts: []
   };
 
   componentDidMount() {
     this.setState({ posts: dummyData });
   }
 
-  filterPosts = e => {
+  filterPosts = (e, input) => {
     e.preventDefault();
-    console.log(e.target);
-    this.setState({});
+    if (input) {
+      this.setState({
+        posts: dummyData.filter(data => data.username === input)
+      });
+    } else {
+      this.setState({
+        posts: dummyData
+      });
+    }
   };
 
   render() {
