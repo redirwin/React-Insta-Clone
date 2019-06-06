@@ -1,5 +1,5 @@
 import React from "react";
-import "../SearchBar/SearchBar.scss";
+// import "../SearchBar/SearchBar.scss";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,7 +28,6 @@ const Header = styled.div`
 `;
 
 const LeftContainer = styled.div`
-.header-left-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,6 +38,27 @@ const LeftContainer = styled.div`
     background-color: black;
   }
   font-family: "Pacifico", cursive;
+`;
+
+const InputContainer = styled.form`
+  input {
+    font-size: 1rem;
+    padding: 1%;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid black;
+    background-color: #fafafa;
+  }
+`;
+
+const HeaderIconsContainer = styled.div`
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    width: 60%;
+    margin-top: 2%;
+  }
 `;
 
 class SearchBar extends React.Component {
@@ -65,20 +85,19 @@ class SearchBar extends React.Component {
           <div className="app-name">Instaflam</div>
         </LeftContainer>
 
-        <form
-          className="search-form-container"
-          onSubmit={e => this.props.filterPosts(e, this.state.searchInput)}
-        >
-          <input
-            type="text"
-            name="searchInput"
-            placeholder="&#9906; Search"
-            value={this.state.searchInput}
-            onChange={e => this.manageSearchInput(e)}
-          />
+        <form onSubmit={e => this.props.filterPosts(e, this.state.searchInput)}>
+          <InputContainer>
+            <input
+              type="text"
+              name="searchInput"
+              placeholder="&#9906; Search"
+              value={this.state.searchInput}
+              onChange={e => this.manageSearchInput(e)}
+            />
+          </InputContainer>
         </form>
 
-        <div className="header-icons-container">
+        <HeaderIconsContainer>
           <FontAwesomeIcon
             icon={faCompass}
             className="explore-icon header-icons"
@@ -94,7 +113,7 @@ class SearchBar extends React.Component {
             size="lg"
             className="heart-icon header-icons"
           />
-        </div>
+        </HeaderIconsContainer>
       </Header>
     );
   }
