@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 class PostsPage extends Component {
   state = {
-    posts: this.props.posts
+    posts: dummyData
   };
 
   filterPosts = (e, input) => {

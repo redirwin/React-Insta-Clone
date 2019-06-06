@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.scss";
 import dummyData from "./dummy-data";
 import PostsPage from "./components/PostContainer/PostsPage";
-// import withAuthenticate from "./components/authentication/withAuthenticate";
 import Login from "./components/Login/Login";
+import withAuthenticate from "./components/authentication/withAuthenticate";
 
-// const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
 
-class App extends Component {
+class App extends React.Component {
   state = {};
 
   componentDidMount() {
@@ -24,12 +24,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.loggedIn);
-    if (this.state.loggedIn === true) {
-      return <PostsPage posts={this.state.posts} />;
-    } else {
-      return <Login />;
-    }
+    return ComponentFromWithAuthenticate;
   }
 }
 

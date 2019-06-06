@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 
-const withAuthenticate = PostsPage => Login =>
+const withAuthenticate = PostsPage =>
   class extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.loggedIn = false;
     }
 
     render() {
       return (
-        <>
+        <div className="container">
           <PostsPage />
-          <Login />
-        </>
+        </div>
       );
     }
   };
