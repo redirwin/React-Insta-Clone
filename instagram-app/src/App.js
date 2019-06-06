@@ -6,7 +6,8 @@ import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
   state = {
-    posts: []
+    posts: [],
+    searchInput: ""
   };
 
   componentDidMount() {
@@ -15,14 +16,17 @@ class App extends Component {
 
   filterPosts = e => {
     e.preventDefault();
-    // console.log("filtering posts!");
+    console.log(e.target);
     this.setState({});
   };
 
   render() {
     return (
       <div className="app-container">
-        <SearchBar filterPosts={this.filterPosts} />
+        <SearchBar
+          filterPosts={this.filterPosts}
+          searchInput={this.state.searchInput}
+        />
         <div className="App">
           <PostContainer posts={this.state.posts} />
         </div>

@@ -10,14 +10,18 @@ import {
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 class SearchBar extends React.Component {
+  state = {
+    searchInput: ""
+  };
+
   manageSearchInput = e => {
-    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
   render() {
+    console.log(this.state.searchInput);
     return (
       <div className="header-container">
         <div className="header-left-container">
@@ -36,8 +40,9 @@ class SearchBar extends React.Component {
         >
           <input
             type="text"
-            name="search-input"
+            name="searchInput"
             placeholder="&#9906; Search"
+            value={this.state.searchInput}
             onChange={e => this.manageSearchInput(e)}
           />
         </form>

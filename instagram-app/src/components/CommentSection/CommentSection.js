@@ -1,12 +1,12 @@
 // import React from "react";
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 // import AddComment from "../AddComment/AddComment";
 import "../CommentSection/CommentSection.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
-class CommentSection extends Component {
+class CommentSection extends React.Component {
   state = {
     likes: this.props.likes,
     comments: this.props.comments,
