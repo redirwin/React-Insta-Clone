@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import App from "../../App";
 
 class Login extends Component {
   state = {
     username: "",
     password: ""
-    // loggedIn: false
   };
 
   manageLoginInput = e => {
@@ -17,8 +17,8 @@ class Login extends Component {
   login = e => {
     e.preventDefault();
     const usernameInput = this.state.username;
-    // console.log(usernameInput);
     localStorage.setItem("username", usernameInput);
+    window.location.reload();
 
     this.setState({
       username: "",

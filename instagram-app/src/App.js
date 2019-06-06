@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   render() {
-    return <ComponentFromWithAuthenticate />;
+    return <ComponentFromWithAuthenticate loggedIn={this.state.loggedIn} />;
   }
 }
 
