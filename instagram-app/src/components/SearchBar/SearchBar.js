@@ -21,7 +21,6 @@ class SearchBar extends React.Component {
   };
 
   render() {
-    // console.log(this.state.searchInput);
     return (
       <div className="header-container">
         <div className="header-left-container">
