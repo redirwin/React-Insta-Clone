@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Login extends Component {
   state = {
     username: "",
-    password: "",
-    loggedIn: false
+    password: ""
+    // loggedIn: false
   };
 
   manageLoginInput = e => {

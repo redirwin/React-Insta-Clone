@@ -8,10 +8,6 @@ class PostsPage extends Component {
     posts: []
   };
 
-  componentDidMount() {
-    this.setState({ posts: dummyData });
-  }
-
   filterPosts = (e, input) => {
     e.preventDefault();
     if (input) {
