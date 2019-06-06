@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const withAuthenticate = PostsPage =>
+const withAuthenticate = PostsPage => Login =>
   class extends Component {
     constructor(props) {
       super(props);
@@ -8,11 +8,11 @@ const withAuthenticate = PostsPage =>
     }
 
     render() {
-      return (
-        <div className="container">
-          <PostsPage />
-        </div>
-      );
+      if (this.state.loggedIn === true) {
+        return <PostsPage posts={this.state.posts} />;
+      } else {
+        return <Login />;
+      }
     }
   };
 
