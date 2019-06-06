@@ -13,6 +13,10 @@ class App extends Component {
     this.setState({ posts: dummyData });
   }
 
+  filterUserNames = e => {
+    setState;
+  };
+
   render() {
     return (
       <div className="app-container">

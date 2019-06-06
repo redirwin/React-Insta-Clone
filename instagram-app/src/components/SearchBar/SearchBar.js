@@ -9,42 +9,45 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const SearchBar = props => {
-  return (
-    <div className="header-container">
-      <div className="header-left-container">
-        <FontAwesomeIcon
-          icon={faInstagram}
-          size="lg"
-          className="insta-icon header-icons"
-        />
-        <div className="bar"> </div>
-        <div className="app-name">Instaflam</div>
-      </div>
+class SearchBar extends React.Component {
+  // const SearchBar = props => {
+  render() {
+    return (
+      <div className="header-container">
+        <div className="header-left-container">
+          <FontAwesomeIcon
+            icon={faInstagram}
+            size="lg"
+            className="insta-icon header-icons"
+          />
+          <div className="bar"> </div>
+          <div className="app-name">Instaflam</div>
+        </div>
 
-      <form className="search-form-container">
-        <input type="text" name="search-input" placeholder="&#9906; Search" />
-      </form>
+        <form className="search-form-container">
+          <input type="text" name="search-input" placeholder="&#9906; Search" />
+        </form>
 
-      <div className="header-icons-container">
-        <FontAwesomeIcon
-          icon={faCompass}
-          className="explore-icon header-icons"
-          size="lg"
-        />
-        <FontAwesomeIcon
-          icon={faComment}
-          size="lg"
-          className="comment-icon header-icons"
-        />
-        <FontAwesomeIcon
-          icon={faHeart}
-          size="lg"
-          className="heart-icon header-icons"
-        />
+        <div className="header-icons-container">
+          <FontAwesomeIcon
+            icon={faCompass}
+            className="explore-icon header-icons"
+            size="lg"
+          />
+          <FontAwesomeIcon
+            icon={faComment}
+            size="lg"
+            className="comment-icon header-icons"
+          />
+          <FontAwesomeIcon
+            icon={faHeart}
+            size="lg"
+            className="heart-icon header-icons"
+          />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SearchBar;
