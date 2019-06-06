@@ -18,7 +18,9 @@ const AddComment = props => {
           placeholder="Add a comment..."
           onChange={event => props.commentFormChange(event, props.postIndex)}
         />
-        <input className="submit-button" type="submit" value="Post" />
+        <button className="submit-button" type="submit" value="Post">
+          Post
+        </button>
       </form>
     </div>
   );

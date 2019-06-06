@@ -19,9 +19,9 @@ const PostContainer = props => {
             </div>
             <CommentSection
               likes={post.likes}
-              comments={post.comments}
               time={post.timestamp}
-              postIndex={post.id}
+              comments={post.comments}
+              post={post}
             />
           </div>
         );

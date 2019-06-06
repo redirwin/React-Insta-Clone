@@ -1,42 +1,48 @@
 // import React from "react";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import AddComment from "../AddComment/AddComment";
+// import AddComment from "../AddComment/AddComment";
 import "../CommentSection/CommentSection.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment } from "@fortawesome/free-regular-svg-icons";
 
-// const CommentSection = props => {
-
 class CommentSection extends Component {
-  constructor(props) {
-    super();
-    this.state = {
-      likes: props.likes,
-      comments: props.comments,
-      time: props.time,
-      postIndex: props.postIndex,
-      commentInput: ""
-    };
-  }
+  state = {
+    likes: this.props.likes,
+    comments: this.props.comments,
+    time: this.props.time,
+    post: this.post,
+    commentInput: ""
+  };
 
   // Manage the form input.
-  commentFormChange = event => {
-    event.preventDefault();
-    // console.log(event.target.value);
+  commentFormChange = e => {
+    // console.log(e.target.value);
     this.setState({
-      [event.target.name]: event.target.value
+      [e.target.name]: e.target.value
     });
   };
 
-  addComment = event => {
-    event.preventDefault();
-    console.log(event.target.value);
-    // console.log(index);
+  addComment = e => {
+    e.preventDefault();
+    const commentInput = {
+      username: "davzbeard",
+      text: this.state.commentInput
+    };
+    this.setState({
+      comments: [...this.state.comments, commentInput],
+      commentInput: ""
+    });
+  };
+
+  likePost = e => {
+    e.preventDefault();
+    this.setState({
+      likes: this.state.likes + 1
+    });
   };
 
   render() {
-    // console.log(this.props);
     return (
       <div>
         <div className="comment-section">
@@ -47,6 +53,7 @@ class CommentSection extends Component {
                 icon={faHeart}
                 size="lg"
                 className="reader-icon-heart"
+                onClick={e => this.likePost(e)}
               />
               <FontAwesomeIcon
                 icon={faComment}
@@ -55,15 +62,17 @@ class CommentSection extends Component {
               />
             </div>
             <div className="likes">
-              {parseInt(this.props.likes).toLocaleString()} likes{" "}
+              {parseInt(this.state.likes).toLocaleString()} likes{" "}
               {/* Displays likes with comma as needed */}
             </div>
           </div>
-
           {/* Map over comments and add each one to comment stream. */}
-          {this.props.comments.map(comment => {
+          {this.state.comments.map(comment => {
             return (
-              <div key={comment.id} className="comment-container">
+              <div
+                className="comment-container"
+                key={this.props.post.id.concat(comment.id)}
+              >
                 <p className="username">{comment.username}</p>
                 <p className="comment-text">{comment.text}</p>
               </div>
@@ -72,11 +81,28 @@ class CommentSection extends Component {
           <div className="time-stamp">{this.props.time}</div>
         </div>
 
-        <AddComment
-          commentFormChange={this.commentFormChange}
-          addNewComment={this.addComment}
-          postIndex={this.props.postIndex}
-        />
+        {/* Form for adding new comment to comment stream. */}
+        <form
+          className="add-comment-container"
+          onSubmit={e => this.addComment(e)}
+        >
+          <input
+            type="text"
+            className="comment-input"
+            name="commentInput"
+            placeholder="Add a comment..."
+            value={this.state.commentInput}
+            onChange={e => this.commentFormChange(e, this.postIndex)}
+          />
+          <button
+            className="submit-button"
+            type="submit"
+            value="Post"
+            onClick={e => this.addComment(e)}
+          >
+            Post
+          </button>
+        </form>
       </div>
     );
   }

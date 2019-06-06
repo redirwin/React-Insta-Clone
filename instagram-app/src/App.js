@@ -5,12 +5,9 @@ import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      posts: []
-    };
-  }
+  state = {
+    posts: []
+  };
 
   componentDidMount() {
     this.setState({ posts: dummyData });
