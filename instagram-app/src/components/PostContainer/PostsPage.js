@@ -5,7 +5,7 @@ import SearchBar from "../SearchBar/SearchBar";
 
 class PostsPage extends Component {
   state = {
-    posts: []
+    posts: this.props.posts
   };
 
   filterPosts = (e, input) => {

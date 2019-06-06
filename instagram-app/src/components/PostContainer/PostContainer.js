@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import "../PostContainer/PostContainer.scss";
 
 const PostContainer = props => {
+  console.log(props);
   return (
     <div className="body-container">
       {props.posts.map(post => {

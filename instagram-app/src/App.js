@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.scss";
 import dummyData from "./dummy-data";
 import PostsPage from "./components/PostContainer/PostsPage";
-import withAuthenticate from "./components/authentication/withAuthenticate";
+// import withAuthenticate from "./components/authentication/withAuthenticate";
 import Login from "./components/Login/Login";
 
 // const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
@@ -25,8 +25,8 @@ class App extends Component {
 
   render() {
     console.log(this.state.loggedIn);
-    if (this.state.loggedIn) {
-      return <PostsPage />;
+    if (this.state.loggedIn === true) {
+      return <PostsPage posts={this.state.posts} />;
     } else {
       return <Login />;
     }
