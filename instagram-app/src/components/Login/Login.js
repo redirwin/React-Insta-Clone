@@ -1,5 +1,21 @@
 import React, { Component } from "react";
-import App from "../../App";
+import styled from "styled-components";
+
+const Form = styled.form`
+  width: 30%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+`;
+
+const Input = styled.input`
+  margin-bottom: 5%;
+  padding: 2%;
+  border: 1px solid black;
+  border-radius: 3px;
+`;
 
 class Login extends Component {
   state = {
@@ -28,8 +44,8 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.login(e)}>
-        <input
+      <Form onSubmit={e => this.login(e)}>
+        <Input
           type="text"
           className="username-input"
           name="username"
@@ -37,7 +53,7 @@ class Login extends Component {
           value={this.state.username}
           onChange={e => this.manageLoginInput(e)}
         />
-        <input
+        <Input
           type="text"
           className="password-input"
           name="password"
@@ -48,7 +64,7 @@ class Login extends Component {
         <button className="login-submit-button" type="submit" value="Submit">
           Submit
         </button>
-      </form>
+      </Form>
     );
   }
 }
