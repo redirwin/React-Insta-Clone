@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 
-const withAuthenticate = PassedComponent =>
+const withAuthenticate = PostsPage => Login =>
   class extends Component {
     render() {
-      return <PassedComponent />;
+      return (
+        <>
+          <PostsPage />
+          <Login />
+        </>
+      );
     }
   };
 
