@@ -1,6 +1,6 @@
 import React from "react";
 import "../SearchBar/SearchBar.scss";
-
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHeart,
@@ -8,6 +8,38 @@ import {
   faCompass
 } from "@fortawesome/free-regular-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+
+const Header = styled.div`
+  font-size: 1.5rem;
+  display: flex;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+    div,
+    form {
+      margin-bottom: 3%;
+      padding: 0;
+    }
+  }
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-around;
+  padding: 2%;
+`;
+
+const LeftContainer = styled.div`
+.header-left-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 175px;
+  .bar {
+    width: 2px;
+    height: 1.5rem;
+    background-color: black;
+  }
+  font-family: "Pacifico", cursive;
+`;
 
 class SearchBar extends React.Component {
   state = {
@@ -22,8 +54,8 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="header-container">
-        <div className="header-left-container">
+      <Header>
+        <LeftContainer>
           <FontAwesomeIcon
             icon={faInstagram}
             size="lg"
@@ -31,7 +63,7 @@ class SearchBar extends React.Component {
           />
           <div className="bar"> </div>
           <div className="app-name">Instaflam</div>
-        </div>
+        </LeftContainer>
 
         <form
           className="search-form-container"
@@ -63,7 +95,7 @@ class SearchBar extends React.Component {
             className="heart-icon header-icons"
           />
         </div>
-      </div>
+      </Header>
     );
   }
 }
