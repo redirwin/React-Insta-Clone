@@ -16,8 +16,7 @@ class CommentSection extends Component {
   };
 
   // Manage the form input.
-  commentFormChange = e => {
-    // console.log(e.target.value);
+  manageCommentInput = e => {
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -92,7 +91,7 @@ class CommentSection extends Component {
             name="commentInput"
             placeholder="Add a comment..."
             value={this.state.commentInput}
-            onChange={e => this.commentFormChange(e, this.postIndex)}
+            onChange={e => this.manageCommentInput(e)}
           />
           <button
             className="submit-button"

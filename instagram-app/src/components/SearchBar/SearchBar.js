@@ -10,7 +10,13 @@ import {
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 class SearchBar extends React.Component {
-  // const SearchBar = props => {
+  manageSearchInput = e => {
+    console.log(e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
     return (
       <div className="header-container">
@@ -24,8 +30,16 @@ class SearchBar extends React.Component {
           <div className="app-name">Instaflam</div>
         </div>
 
-        <form className="search-form-container">
-          <input type="text" name="search-input" placeholder="&#9906; Search" />
+        <form
+          className="search-form-container"
+          onSubmit={e => this.props.filterPosts(e)}
+        >
+          <input
+            type="text"
+            name="search-input"
+            placeholder="&#9906; Search"
+            onChange={e => this.manageSearchInput(e)}
+          />
         </form>
 
         <div className="header-icons-container">

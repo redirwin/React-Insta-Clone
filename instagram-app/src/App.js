@@ -13,14 +13,16 @@ class App extends Component {
     this.setState({ posts: dummyData });
   }
 
-  filterUserNames = e => {
-    setState;
+  filterPosts = e => {
+    e.preventDefault();
+    // console.log("filtering posts!");
+    this.setState({});
   };
 
   render() {
     return (
       <div className="app-container">
-        <SearchBar />
+        <SearchBar filterPosts={this.filterPosts} />
         <div className="App">
           <PostContainer posts={this.state.posts} />
         </div>
