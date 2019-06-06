@@ -2,15 +2,26 @@ import React from "react";
 import AuthorSection from "../AuthorSection/AuthorSection";
 import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
-import "../PostContainer/PostContainer.scss";
+import styled from "styled-components";
+
+const BodyContainer = styled.div`
+  background-color: #fafafa;
+  border-top: 1px solid grey;
+`;
+
+const Posts = styled.div`
+  width: 50%;
+  max-width: 600px;
+  margin: 5% auto;
+`;
 
 const PostContainer = props => {
   console.log(props);
   return (
-    <div className="body-container">
+    <BodyContainer>
       {props.posts.map(post => {
         return (
-          <div key={post.id} className="post-container">
+          <Posts key={post.id} className="post-container">
             <div className="post-data">
               <AuthorSection
                 author={post.username}
@@ -24,10 +35,10 @@ const PostContainer = props => {
               comments={post.comments}
               post={post}
             />
-          </div>
+          </Posts>
         );
       })}
-    </div>
+    </BodyContainer>
   );
 };
 
